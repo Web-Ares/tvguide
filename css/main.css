@@ -235,7 +235,7 @@
 .social-networks__item svg {
     width: 100%;
     height: auto;
-
+    max-height: 100%;
 }
 .social-networks__item svg path,
 .social-networks__item svg rect {
@@ -399,10 +399,13 @@
 
 /* --------------- social-media --------------- */
 .social-media {
-
+    padding: 7px 0 0;
+    margin: 0 -6%;
+    font-family: Arial, sans-serif;
+    color: #292f33;
 }
 .social-media__tweets {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto 40px;
 }
 .social-media__tweets img {
@@ -412,12 +415,115 @@
 .social-media__pictures {
     max-width: 320px;
     margin: 0 auto;
+    padding: 0 6%;
 }
 .social-media__pictures img {
     display: block;
     width: 100%;
     height: auto;
     margin: 0 0 22px;
+}
+.social-media__tweet {
+    position: relative;
+    margin: 0 0 8px;
+    padding-top: 8px;
+    border-top: 1px solid #ccd6de;
+}
+.social-media__tweet:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+.social-media__tweet-logo {
+    overflow: hidden;
+    position: absolute;
+    top: 12px;
+    left: 3%;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+}
+.social-media__tweet:first-child .social-media__tweet-logo {
+    top: 4px;
+}
+.social-media__tweet-content {
+    padding-left: 21%;
+}
+.social-media__tweet-logo img {
+    width: 100%;
+    height: auto;
+}
+.social-media__tweet-head {
+    overflow: hidden;
+    position: relative;
+    padding-right: 35px;
+}
+.social-media__tweet-name {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+}
+.social-media__tweet-login {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 22px;
+    color: #8899a6;
+    margin: 0 0 0 -2px;
+
+}
+.social-media__tweet-time {
+    position: absolute;
+    top: 2px;
+    right: 9px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+    font-size: 13px;
+    line-height: 20px;
+    color: #8899a6;
+}
+.social-media__tweet-text {
+    padding: 0 7% 0 1px;
+    margin: 0 0 6px;
+    font-size: 15px;
+    line-height: 20px;
+}
+.social-media__tweet-text p {
+    font-size: 15px;
+    line-height: 20px;
+}
+.social-media__tweet-text a {
+    color: #0072bb;
+}
+.social-media__tweet-text img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 9px 0 17px;
+}
+.social-media__tweet-buttons {
+
+}
+.social-media__tweet-buttons a {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 44px;
+}
+.social-media__tweet-buttons a:first-child {
+    margin-left: 0;
+}
+.social-media__tweet-buttons i {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    color: #ccd6de;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+.social-media__tweet-buttons a:hover i {
+    color: #000;
 }
 /* --------------- /social-media --------------- */
 
@@ -486,6 +592,11 @@
 
 /* --------------- /serials-list --------------- */
 
+#blog-header .cover, .slider-cover {
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+
 @media (min-width: 768px) {
 
     /* --------------- serials-list --------------- */
@@ -539,10 +650,10 @@
         padding: 36px 0 34px 19px;
     }
     .content__inner>div {
-        width: 24.7%;
+        width: 300px;
     }
     .content__inner>div:first-child {
-        width: 71.2%;
+        width: calc(100% - 350px);
         padding: 5px 0 0 0;
         margin: 0;
     }
@@ -763,6 +874,7 @@
         -ms-flex-align: start;
         -moz-align-items: flex-start;
         align-items: flex-start;
+        margin: 0;
         padding: 14px 25px 0 0;
     }
     .social-media__tweets {
@@ -774,6 +886,7 @@
         width: 28.3%;
         max-width: 100%;
         margin: 0;
+        padding: 0;
     }
     /* --------------- /social-media --------------- */
 
@@ -798,6 +911,54 @@
     .serials-list__name {
         display: block;
         padding: 16px 26px;
+    }
+    /* --------------- /serials-list --------------- */
+    /* --------------- /serials-list --------------- */
+    .social-media__tweet-name {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .social-media__tweet-login {
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .social-media__tweet-time {
+        position: relative;
+        top: auto;
+        right: auto;
+        font-size: 10px;
+        line-height: 16px;
+    }
+    .social-media__tweet-time:after {
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 7px;
+        width: 2px;
+        height: 2px;
+        background: #8294a2;
+        border-radius: 2px;
+    }
+    .social-media__tweet-text {
+        padding: 0;
+        font-size: 21px;
+        line-height: 26px;
+    }
+    .social-media__tweet-text p {
+        font-size: 21px;
+        line-height: 26px;
+    }
+    .social-media__tweet-content {
+        padding-left: 46px;
+    }
+    .social-media__tweet-logo {
+        top: 10px;
+        left: 0;
+        width: 39px;
+        height: 39px;
+    }
+    .social-media__tweet:first-child .social-media__tweet-logo {
+        top: 3px;
     }
     /* --------------- /serials-list --------------- */
 
